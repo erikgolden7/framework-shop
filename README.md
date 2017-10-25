@@ -35,7 +35,7 @@ To begin our project, we will be installing the required dependencies and config
 
 * Install React Router.
 * Create a new file in `src/` named `router.js`.
-* Configure a router in `src/router.js`: 
+* Configure a router in `src/router.js`:
   * Import `Switch` and `Route` from `react-router-dom`.
   * Import the following components to use as routes:
     * `src/components/Landing/Landing.js`
@@ -79,7 +79,7 @@ import Landing from './components/Landing/Landing';
 import Shop from './components/Shop/Shop';
 ```
 
-Now that we have all our imports we can focus on creating the router. We can do this by exporting JSX. The top level element will be our `Switch` component from `react-router-dom`. Create an export default statement underneathe all the `import` statements.
+Now that we have all our imports we can focus on creating the router. We can do this by exporting JSX. The top level element will be our `Switch` component from `react-router-dom`. Create an export default statement underneath all the `import` statements.
 
 ```js
 export default (
@@ -323,7 +323,7 @@ In this step, we will be setting up the `Landing` component to display data and 
 
 So we have routes now but no way to get to those routes from the interface. Let's fix that by updating our `Landing` component. Open `src/components/Landing/Landing.js`. At the bottom of the code, you can see `mapStateToProps` and `connect`. That is Redux's way of giving this component data. This component will take a products prop that is an array of products that are either featured or on sale.
 
-Let's begin by importing `FeaturedProduct` from `src/components/Landing/FeaturedProduct/FeaturedProduct.js` and `Link` from `react-router-dom` in `src/components/Landing/Landing.js`. The `Link` component is React Router's replacement for an `<a>` tag which is used to allow the library better control over routing. 
+Let's begin by importing `FeaturedProduct` from `src/components/Landing/FeaturedProduct/FeaturedProduct.js` and `Link` from `react-router-dom` in `src/components/Landing/Landing.js`. The `Link` component is React Router's replacement for an `<a>` tag which is used to allow the library better control over routing.
 
 ```js
 import { Link } from "react-router-dom";
@@ -367,10 +367,10 @@ const products = featuredProducts.map( (product) => (
     onSale={ product.onSale }
     price={ product.price }
   />
-)); 
+));
 ```
 
-This will create an array of React components for us. More specifically an array of `FeaturedProduct` components. Since we used a map, each featured product will have all the information related to that product. 
+This will create an array of React components for us. More specifically an array of `FeaturedProduct` components. Since we used a map, each featured product will have all the information related to that product.
 
 We are now ready to render our products onto the landing page. Locate the `div` with the `className` of `landing__products-wrapper`. Inside that `div` render our `products`.
 
@@ -380,7 +380,7 @@ We are now ready to render our products onto the landing page. Locate the `div` 
 </div>
 ```
 
-The products should now be rendering on the page. However, the data is not being populated into the `FeaturedProduct` component. Let's take a look at the `FeaturedProduct.js` file and make sure it's using the props as the data source. Open up `src/components/Landing/FeaturedProduct/FeaturedProduct.js` and import `Link` from React Router. 
+The products should now be rendering on the page. However, the data is not being populated into the `FeaturedProduct` component. Let's take a look at the `FeaturedProduct.js` file and make sure it's using the props as the data source. Open up `src/components/Landing/FeaturedProduct/FeaturedProduct.js` and import `Link` from React Router.
 
 ```js
 import { Link } from "react-router-dom";
@@ -662,7 +662,7 @@ ownProps = {
     }
   }
 }
-``` 
+```
 
 Knowing this object structure we can combine the value of `match.params.name` with a `.find` to get the exact product object we need for our component. Let's write a function that will take the name we get from `match.params` and search through the products array to find the specific product we want to display.
 
@@ -872,7 +872,7 @@ In this step, we will set up the `Shop` view and its child components.
 
 * Open `src/components/Shop/Shop.js`.
 * Import `ProductTile` from `src/components/Shop/ProductTile/ProductTile.js`.
-* Create a variable called `productTiles` above the `return` of the `Shop` function: 
+* Create a variable called `productTiles` above the `return` of the `Shop` function:
   * This variable should equal a mapping over `products` that returns the following JSX:
     * <details>
       <summary> <code> JSX </code> </summary>
@@ -1188,7 +1188,7 @@ export function Cart( { checkout, history, productsInCart } ) {
     checkout();
     history.push("/thank-you");
   }
-  
+
   return (
     <div className="cart">
       <h1>Cart</h1>
